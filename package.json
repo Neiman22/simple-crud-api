@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ts-node-dev src/index.ts",
-    "lint": "eslint .",
-    "build": "webpack --config webpack.config.js"
+    "start:dev": "nodemon --exec ts-node-dev src/index.ts",
+    "build": "webpack --config webpack.config.js",
+    "start:prod": "npm run build && node dist/bundle.js"
   },
   "keywords": [],
   "author": "",
