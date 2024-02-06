@@ -16,3 +16,7 @@ export const addUser = (username: string, age: number, hobbies: string[]) => {
   return newUser;
 }
 addUser('Artem', 39, ['skis']);
+
+export const getAllUsers = () => {
+  return users;
+}
