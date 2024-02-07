@@ -7,7 +7,7 @@ interface IUser {
   hobbies: string[];
 }
 
-export const users: IUser[] = [];
+let users: IUser[] = [];
 
 export const getAllUsers = () => {
   return users;
@@ -43,6 +43,11 @@ createNewUser({
   age: 39, 
   hobbies: ['skis'],
 });
+createNewUser({
+  username: 'Anton', 
+  age: 35, 
+  hobbies: ['chess'],
+});
 
 export const updateUserByID = (id: string, userData: IUser) => {
   const userIndex = users.findIndex(user => user.id === id);
@@ -52,4 +57,8 @@ export const updateUserByID = (id: string, userData: IUser) => {
     return updateUser;
   }
   return;
+}
+
+export const deleteUserById = (id: string) => {
+  users = users.filter(user => user.id !== id);
 }

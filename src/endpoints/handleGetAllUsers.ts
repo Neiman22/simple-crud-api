@@ -1,7 +1,7 @@
 import { getAllUsers } from "../data";
 import { IncomingMessage, ServerResponse } from "http";
 
-export const handleGetAllUsers = (req: IncomingMessage, res: ServerResponse) => {
+export const handleGetAllUsers = (res: ServerResponse) => {
   try {
     const users = getAllUsers();
     res.writeHead(200, { 'Content-Type': 'application/json' });
