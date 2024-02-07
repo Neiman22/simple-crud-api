@@ -1,7 +1,7 @@
 import { getUserByID, validateUserId } from "../data";
 import { IncomingMessage, ServerResponse } from "http";
 
-export const handleGetUserId = (req: IncomingMessage, res: ServerResponse, url: string) => {
+export const handleGetUserById = (req: IncomingMessage, res: ServerResponse, url: string) => {
   const userId = url.split('/')[3];
   if (!validateUserId(userId)) {
     res.writeHead(400, { 'Content-Type': 'application/json' });
