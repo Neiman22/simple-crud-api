@@ -9,19 +9,20 @@ export const handleDeleteUserById = (res: ServerResponse, url: string) => {
     return;
   }
 
-  const user = getUserByID(userId);
-  if (!user) {
-    res.writeHead(404, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ error: 'User not found' }));
-    return;
-  }
-
   try {
-    res.writeHead(204, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({...user}));
+    const user = getUserByID(userId);
+    if (!user) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'User not found' }));
+      return;
+    }
+
     deleteUserById(userId);
+    res.writeHead(204, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(user));
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Internal server error' }));
   }
 }
+

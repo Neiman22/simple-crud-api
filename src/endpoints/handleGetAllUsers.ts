@@ -1,5 +1,5 @@
 import { getAllUsers } from "../data";
-import { IncomingMessage, ServerResponse } from "http";
+import { ServerResponse } from "http";
 
 export const handleGetAllUsers = (res: ServerResponse) => {
   try {

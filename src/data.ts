@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-interface IUser {
+export interface IUser {
   id?: string;
   username: string;
   age: number;
@@ -37,7 +37,7 @@ export const createNewUser = (userData: IUser) => {
   users.push(newUser);
   return newUser;
 }
-
+/* 
 createNewUser({
   username: 'Artem', 
   age: 39, 
@@ -48,7 +48,7 @@ createNewUser({
   age: 35, 
   hobbies: ['chess'],
 });
-
+ */
 export const updateUserByID = (id: string, userData: IUser) => {
   const userIndex = users.findIndex(user => user.id === id);
   if (userIndex !== -1) {
