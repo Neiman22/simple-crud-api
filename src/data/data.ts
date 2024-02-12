@@ -38,7 +38,7 @@ export const createNewUser = (userData: IUser) => {
   users.push(newUser);
   return newUser;
 }
-
+/*
 createNewUser({
   username: 'Artem', 
   age: 39, 
@@ -49,6 +49,7 @@ createNewUser({
   age: 35, 
   hobbies: ['chess'],
 });
+*/
 
 export const updateUserByID = (id: string, userData: IUser) => {
   const userIndex = users.findIndex(user => user.id === id);
