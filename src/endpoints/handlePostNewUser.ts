@@ -1,6 +1,5 @@
-import { createNewUser, isValidUserData } from "../data";
+import { createNewUser, isValidUserData } from "../data/data";
 import { IncomingMessage, ServerResponse } from "http";
-
 
 export const handlePostNewUser = (req: IncomingMessage, res: ServerResponse) =>   {
   let data = '';

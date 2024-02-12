@@ -1,4 +1,4 @@
-import { getUserByID, validateUserId, deleteUserById } from "../data";
+import { getUserByID, validateUserId, deleteUserById } from "../data/data";
 import { ServerResponse } from "http";
 
 export const handleDeleteUserById = (res: ServerResponse, url: string) => {
@@ -19,7 +19,7 @@ export const handleDeleteUserById = (res: ServerResponse, url: string) => {
 
     deleteUserById(userId);
     res.writeHead(204, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(user));
+    res.end(JSON.stringify({ message: 'User deleted successfully' }));
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Internal server error' }));

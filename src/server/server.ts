@@ -1,9 +1,9 @@
 import { createServer } from 'http';
-import { handleGetAllUsers } from './endpoints/handleGetAllUsers';
-import { handleGetUserById } from './endpoints/handleGetUserById';
-import { handlePostNewUser } from './endpoints/handlePostNewUser';
-import { handlePutUserById } from './endpoints/handlePutUserById';
-import { handleDeleteUserById } from './endpoints/handleDeleteUserById';
+import { handleGetAllUsers } from '../endpoints/handleGetAllUsers';
+import { handleGetUserById } from '../endpoints/handleGetUserById';
+import { handlePostNewUser } from '../endpoints/handlePostNewUser';
+import { handlePutUserById } from '../endpoints/handlePutUserById';
+import { handleDeleteUserById } from '../endpoints/handleDeleteUserById';
 
 export const server = createServer((req, res) => {
   const { method, url } = req;

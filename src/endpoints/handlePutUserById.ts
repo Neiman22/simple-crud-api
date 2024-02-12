@@ -1,4 +1,4 @@
-import { isValidUserData, getUserByID, validateUserId, updateUserByID } from "../data";
+import { isValidUserData, getUserByID, validateUserId, updateUserByID } from "../data/data";
 import { IncomingMessage, ServerResponse } from "http";
 
 export const handlePutUserById = (req: IncomingMessage, res: ServerResponse, url: string) => {

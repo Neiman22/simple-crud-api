@@ -1,4 +1,4 @@
-import { getUserByID, validateUserId } from "../data";
+import { getUserByID, validateUserId } from "../data/data";
 import { IncomingMessage, ServerResponse } from "http";
 
 export const handleGetUserById = (res: ServerResponse, url: string) => {

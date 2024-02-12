@@ -26,7 +26,8 @@ export const isValidUserData = (userData: IUser) => {
   return (
     userData.username && typeof userData.username === 'string' &&
     userData.age && typeof userData.age === 'number' &&
-    userData.hobbies && Array.isArray(userData.hobbies)
+    userData.hobbies && Array.isArray(userData.hobbies) &&
+    userData.hobbies.every(hobby => typeof hobby === 'string')
   );
 }
 
@@ -37,7 +38,7 @@ export const createNewUser = (userData: IUser) => {
   users.push(newUser);
   return newUser;
 }
-/* 
+
 createNewUser({
   username: 'Artem', 
   age: 39, 
@@ -48,7 +49,7 @@ createNewUser({
   age: 35, 
   hobbies: ['chess'],
 });
- */
+
 export const updateUserByID = (id: string, userData: IUser) => {
   const userIndex = users.findIndex(user => user.id === id);
   if (userIndex !== -1) {

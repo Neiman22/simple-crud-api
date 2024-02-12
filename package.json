@@ -7,7 +7,9 @@
     "start:dev": "nodemon --exec ts-node-dev src/index.ts",
     "build": "webpack --config webpack.config.js",
     "start:prod": "npm run build && node dist/bundle.js",
-    "test": "jest"
+    "test": "jest",
+    "multi": "cross-env NODE_ENV=production node -r ts-node/register ./src/multi/multi.ts"
+
   },
   "keywords": [],
   "author": "",

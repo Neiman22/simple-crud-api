@@ -1,4 +1,4 @@
-import { getAllUsers } from "../data";
+import { getAllUsers } from "../data/data";
 import { ServerResponse } from "http";
 
 export const handleGetAllUsers = (res: ServerResponse) => {
